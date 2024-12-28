@@ -8,6 +8,6 @@
 
 [Модуль авторизации](https://github.com/tanyyae45/group-project/blob/main/autorization_module)
 
-[Telegram клиент](https://github.com/tanyyae45/group-project/blob/main/tg_client)
+[Telegram клиент](https://github.com/tanyyae45/group-project/blob/main/tg_client/tg_client.md)
 
 [Web клиент](https://github.com/tanyyae45/group-project/blob/main/web_client)
