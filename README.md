@@ -1,4 +1,4 @@
-# Приложение,для проведения массовых опросов и тестирования
+# Бот,для проведения массовых опросов и тестирования
 
 ###
 *[Telegram клиент](https://github.com/tanyyae45/group-project/blob/main/tg_client/tg_client.md)*
