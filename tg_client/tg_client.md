@@ -38,7 +38,7 @@ class UserResult:
 
 # --- Хранилище данных ---
 tests = {}
-user_results = {}  # user_id -> { test_id -> UserResult }
+user_results = {}  
 
 # Пример теста по программированию
 default_test = Test(
@@ -169,7 +169,7 @@ async def show_question(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     """Отображает текущий вопрос теста"""
     query = update.callback_query
     if query:
-         await query.answer() # answer callback query if it comes from a callback
+         await query.answer() 
     test_id = context.user_data['current_test_id']
     test = tests.get(test_id)
     question_index = context.user_data['current_question_index']
@@ -251,23 +251,17 @@ def main() -> None:
     TOKEN = '7044996466:AAEVOqQuwjKQma91-vMdjXanRMmm4WbdwKY' 
     application = ApplicationBuilder().token(TOKEN).build()
 
-    # Обработчики команд
     application.add_handler(CommandHandler("start", start_command))
     application.add_handler(CommandHandler("tests", tests_command))
     application.add_handler(CommandHandler("results", results_command))
     application.add_handler(CommandHandler("create_test",create_test_command))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, text_message_handler))
 
-    # Обработчики кнопок
     application.add_handler(CallbackQueryHandler(handle_test_callback, pattern="^test_"))
     application.add_handler(CallbackQueryHandler(handle_answer_callback, pattern="^answer_"))
 
-
-
-    # Обработчик ошибок
     application.add_error_handler(error_handler)
 
-    # Запуск бота
     application.run_polling()
 
 if __name__ == '__main__':
